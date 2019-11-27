@@ -10,14 +10,22 @@ module.exports = function(defaults) {
       'importBootstrapCSS': false
     },
     autoImport: {
+      alias: {
+        'os': 'os-browserify',
+        'stream': 'readable-stream'
+      },
       webpack: {
-          resolve: {
-            alias: {
-              'pouchdb-promise$': "pouchdb-promise/lib/index.js"
-            }
+        resolve: {
+          alias: {
+            'pouchdb-promise$': 'pouchdb-promise/lib/index.js'
           }
+        },
+        node: {
+          global: true
+        }
       }
     },
+
     'ember-composable-helpers': {
       only: ['inc', 'toggle', 'sort-by', 'reject-by']
     }
